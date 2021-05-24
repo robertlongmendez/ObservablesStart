@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { interval } from 'rxjs';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,6 +12,9 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    interval( period: 1000 ).subscribe( next: count => {
+      console.log(count);
+    });
   }
 
 }
